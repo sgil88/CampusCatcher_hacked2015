@@ -8,7 +8,8 @@ if (Meteor.isClient) {
   Template.body.helpers({
       events: [
         { name: "free hotdogs", date: "feb 2"},
-        { name: "hackathon", date: "jan 31"}
+        { name: "hackathon", date: "jan 31"},
+        { name: "pizza", date: "fan 30"}
       ]
       
       //  events: function () {
