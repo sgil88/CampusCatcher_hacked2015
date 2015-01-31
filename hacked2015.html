@@ -4,6 +4,11 @@
 </head>
 
 <body>
+  <div class="row">
+    <div class="large-12 columns">
+
+      <div class="row">
+        <div class="large-12 columns">
   <!-- nav bar -->
   <div class="contain-to-grid fixed">
     <nav class="top-bar">
@@ -37,10 +42,32 @@
         </ul>
       </section>
     </nav>
+  </div>
 </div>
+</div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+
+            <!-- display events -->
+            {{#each events}}
+              {{> event}}
+            {{/each}}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="event">
+  <div class="large-4 small-6 columns">
+    <img src="#">
+    <div class="panel">
+      <h5>{{name}}</h5>
+      <h6>{{date}}</h6>
+    </div>
+  </div>
 </template>
