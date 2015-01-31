@@ -7,7 +7,24 @@ margin-left: 8px;
 }
 
 li.has-form {
-background-color: #7C6161;
+background-color: #0b6490;
 list-style: none;
 padding-top: 2em;
+}
+
+.contain-to-grid {
+background: #298aba;
+}
+
+.top-bar {
+background: #298aba;
+overflow: visible;
+}
+
+.top-bar-section ul li {
+background: #298aba;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+background: #298aba;	
 }
