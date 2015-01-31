@@ -1,2 +1,2 @@
 # hacked2015
-Flashcard game
+# Find all student club events on campus!
