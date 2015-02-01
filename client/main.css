@@ -12,6 +12,7 @@ list-style: none;
 padding-top: 2em;
 padding-left: 10em;
 padding-top: 18px !important;
+box-shadow: 1px 4px 13px rgba(0, 0, 0, 4.62);
 
 }
 .top-bar{
@@ -165,5 +166,5 @@ text-align: left;
     color: #aaa;
     text-align: center;
     width: 100%;
-    background:#054260;
+    background:#1A1A1A;;
 }
