@@ -6,56 +6,66 @@
 <body>
 </body>
   
-<template name="home">
+<template name="mainLayout">
   <div class="row">
     <div class="large-12 columns">
     
-      {{navbar}}
-    
-      <hr>
       <div class="row">
         <div class="large-12 columns">
-          <div class="row">
-
-            <!-- display events -->
-            {{#each events}} {{> event}} {{/each}}
-
-          </div>
+          {{> yield region="navbar"}}
         </div>
       </div>
+
+      <hr>
+      
+      <div class="row">
+        <div class="large-12 columns">
+          {{> yield}}
+        </div>
+      </div>
+
     </div>
   </div>
-  {{footer}}
+
+  {{> yield region="footer"}}
 
 </template>
 
+<template name="home">
+  <div class="row">
+
+    <!-- display events -->
+    {{#each events}} {{> event}} {{/each}}
+
+  </div>
+</template>
+
 <template name="register">
+  <div class="row">
+    <form class="new-club">
+      <input type="text" name="name" 
+            placeholder="Club name" required="required"/>
+      <input type="text" name="university"
+            placeholder="University club is registered with"
+            required="required"/>
+      <input type="email" name="email" 
+            placeholder="Club email" required="required"/>
+      <input type="text" name="description" 
+            placeholder="Description of club"  equired="required"/>
+    </form>
+  </div>
 </template>
 
 <template name="dashboard">
   <div class="row">
-    <div class="large-12 columns">
-      
-      {{navbar}}
 
-      <hr>
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="row">
+    <!-- display events -->
+    {{#each events}} {{> event}} {{/each}}
 
-            <!-- display events -->
-            {{#each events}} {{> event}} {{/each}}
-
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-
-  {{footer}}
 </template>
 
-<template name="footer">
+<template name="footerTemp">
   <!-- Page Footer -->
   <div id="footer">
     &copy; 2015 Campus Catcher
@@ -63,49 +73,44 @@
   <!-- End Page Footer -->
 </template>
 
-<template name="navbar">
-  <div class="row">
-    <div class="large-12 columns">
+<template name="navbarTemp">
 
-      <!-- TOP BAR MENU -->
-      <div class="contain-to-grid fixed">
-        <nav class="top-bar" data-topbar role="navigation">
-          <ul class="title-area">
-            <li class="name">
-              <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
-            </li>
-
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-            </li>
-          </ul>
-
-          <section class="top-bar-section">
-            <ul class="right">
-              <li><a href="">Sign in</a>
-              </li>
-              <li><a href="">Register</a>
-              </li>
-            </ul>
-          </section>
-        </nav>
-
-        <li class="has-form">
-          <div class="row collapse">
-            <div class="large-9 small-9 columns">
-              <input type="text" placeholder="Find Stuff">
-            </div>
-            <div class="large-3 small-3 columns">
-              <a href="#" class="alert button expand">Search</a>
-            </div>
-          </div>
+  <!-- TOP BAR MENU -->
+  <div class="contain-to-grid fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
         </li>
+
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="">Sign in</a>
+          </li>
+          <li><a href="{{pathFor 'register'}}">Register</a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
+    <li class="has-form">
+      <div class="row collapse">
+        <div class="large-9 small-9 columns">
+          <input type="text" placeholder="Find Stuff">
+        </div>
+        <div class="large-3 small-3 columns">
+          <a href="#" class="alert button expand">Search</a>
+        </div>
       </div>
-    </div>
+    </li>
   </div>
 </template>
 
 <template name="event">
-
   <div class="large-4 small-6 columns">
     <img src="/img/1.jpg">
     <div class="panel">

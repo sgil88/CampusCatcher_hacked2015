@@ -1,10 +1,25 @@
 // routing
 Router.map(function() {
-  this.route('home', {path: '/'});
-  this.route('dashboard', {path: '/dashboard'});
+  this.route('home', {path: '/',
+                      layoutTemplate: 'mainLayout',
+                      yieldTemplates: {
+                        'navbarTemp': {to: 'navbar'},
+                        'footerTemp': {to: 'footer'}
+                      }
+  });
+  this.route('dashboard', {layoutTemplate: 'mainLayout',
+                            yieldTemplates: {
+                              'navbarTemp': {to: 'navbar'},
+                              'footerTemp': {to: 'footer'}
+                          }
+  });
+  this.route('register', {layoutTemplate: 'mainLayout',
+                          yieldTemplates: {
+                            'navbarTemp': {to: 'navbar'},
+                            'footerTemp': {to: 'footer'}
+                          }
+  });
 });
-
-
 
 // db for events
 Events = new Mongo.Collection("events");
