@@ -6,32 +6,16 @@
 </body>
 
 <template name="mainLayout">
-    <div class="row">
-        <hr>
-        <div class="large-12 columns">
-            <div class="row">
-                    {{> yield region="navbar"}}
-                    <hr>
-            </div>
-                <hr>
-                    {{> yield}}
-        </div>
-    </div>
-
-
-    {{> yield region="footer"}}
+    <hr><hr> {{> yield region="navbar"}}
+    <hr><hr>
+    {{> yield}} {{> yield region="footer"}}
 
 </template>
 
 <template name="home">
     <div class="row">
-
-
         <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
-        <hr>
-
-
     </div>
 </template>
 
@@ -84,7 +68,7 @@
                 </ul>
             </section>
         </nav>
-<!--
+        <!--
         <li class="has-form">
                 <div class="large-6 small-6 columns">
                     <input type="text" placeholder="hackathon apps">
