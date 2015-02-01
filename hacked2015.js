@@ -40,19 +40,47 @@ if (Meteor.isClient) {
       }
   });
 
-  Template.register.events({
-      'submit .new-club': function(event) {
-        // add club to database
-        var club =  event.target.clubName.value;
-        var email = event.target.email.value;
-        var university = event.target.university.value;
-        var description = event.target.clubDescription.value;
+  Template.navbarTemp.events({
+      'submit .new-club': function(event, template) {
+        event.preventDefault();
 
-        Clubs.insert({
+        // add club to database
+        var club =  template.find("#clubName.value").value;
+        var email = template.find("#email").value;
+        var university = template.find("#university").value;
+        var description = template.find("#clubDescription").value;
+        var password = template.find("#password").value;
+
+        Accounts.createUser({
             club: club,
             university: university,
+            description: description,
             email: email,
-            description: description
+            password: password,
+        });
+          
+        Router.go('dashboard');
+        return false;
+      }
+  });
+  
+  Template.navbarTemp.events({
+      'submit .login': function(event, template) {
+        event.preventDefault();
+
+        // add club to database
+        var club =  template.find("#clubName.value").value;
+        var email = template.find("#email").value;
+        var university = template.find("#university").value;
+        var description = template.find("#clubDescription").value;
+        var password = template.find("#password").value;
+
+        Accounts.createUser({
+            club: club,
+            university: university,
+            description: description,
+            email: email,
+            password: password,
         });
           
         Router.go('dashboard');
