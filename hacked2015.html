@@ -34,7 +34,7 @@
     <div class="row">
 
 
-    <!-- display events -->
+        <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
     </div>
@@ -42,29 +42,24 @@
 
 <template name="register">
 
-  <div class="row">
-    <form class="new-club">
-      <input type="text" name="clubName" 
-            placeholder="Club name" required="required"/>
-      <input type="text" name="university"
-            placeholder="University club is registered with"
-            required="required"/>
-      <input type="email" name="email" 
-            placeholder="Club email" required="required"/>
-      <input type="text" name="clubDescription" 
-            placeholder="Description of club"  equired="required"/>
+    <div class="row">
+        <form class="new-club">
+            <input type="text" name="clubName" placeholder="Club name" required="required" />
+            <input type="text" name="university" placeholder="University club is registered with" required="required" />
+            <input type="email" name="email" placeholder="Club email" required="required" />
+            <input type="text" name="clubDescription" placeholder="Description of club" equired="required" />
 
-      <input type="submit"/>
-    </form>
-  </div>
+            <input type="submit" />
+        </form>
+    </div>
 </template>
 
 <template name="dashboard">
     <div class="row">
 
 
-    <!-- display events -->
-      {{#each clubEvents}} {{> clubEvent}} {{/each}}
+        <!-- display events -->
+        {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
     </div>
 </template>
@@ -94,12 +89,9 @@
 
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><a href="">Sign in</a>
+                    <li><a class="medium button hide-for-small button-radius success" data-reveal-id="signModal" >Sign In</a>
                     </li>
-
-                    <li><a class="medium button hide-for-small"
-                          data-reveal-id="registerForm">Register your Club</a>
-
+                    <li><a class="medium button hide-for-small button-radius secondary" data-reveal-id="registerModal ">Register your Club</a>
                     </li>
                 </ul>
             </section>
@@ -117,6 +109,26 @@
         </li>
     </div>
 
+    <!-- Form REGISTRATION Modal -->
+      <div id="signModal" class="reveal-modal small">
+        <form class="custom"> 
+                <legend> SIGN IN</legend>
+                <label for="mail"> Email:</label>
+                <input type="email" id="mail" name="user_email">
+
+                <label for="password"> Password:</label>
+                <input type="password" id="password" name="user_password">
+
+            <button type="submit"> Log In</button>
+            <button type="submit"> Forgot Password?</button>
+
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
+    <!-- End Form REGISTRATION Modal -->
+
+
+    <!-- Form SIGN IN Modal -->
     <!-- Form Modal -->
     <div id="registerForm" class="reveal-modal small">
         <h3>SIGN UP</h3>
@@ -137,31 +149,26 @@
                 <label for="des"> Description:</label>
                 <textarea id="des" name="description"></textarea>
             </fieldset>
-            
             <fieldset>
                 <label for="university"> School Name:</label>
                 <input type="text" id="university" name="university">
 
             </fieldset>
-
-            <button type="submit"> Sign Up</button>
-
-
+            <button type="submit" > Sign Up</button>
         </form>
         <a href="#" class="close-reveal-modal">&#215;</a>
     </div>
-    <!-- End Form Modal -->
+    <!-- End Form SIGN IN Modal -->
 
 </template>
 
 
 <template name="clubEvent">
-  <div class="large-4 small-6 columns">
-    <img src="/img/1.jpg">
-    <div class="panel">
-      <h5>{{name}}</h5>
-      <h6>{{date}}</h6>
+    <div class="large-4 small-6 columns">
+        <img src="/img/1.jpg">
+        <div class="panel">
+            <h5>{{name}}</h5>
+            <h6>{{date}}</h6>
+        </div>
     </div>
-  </div>
 </template>
-
