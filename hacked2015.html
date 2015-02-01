@@ -56,11 +56,8 @@
 
 <template name="dashboard">
     <div class="row">
-
-
         <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
-
     </div>
 </template>
 
@@ -89,8 +86,16 @@
 
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><a class="medium button hide-for-small button-radius success" data-reveal-id="signModal" >Sign In</a>
-                    </li>
+
+                    <p class="button-group radius">
+                        <a href="#" class="button success" data-reveal-id="signModal">Sign In</a>
+                        <a href="#" class="button alert" data-reveal-id="registerModal">Register</a>
+
+                    </p>
+
+
+
+
 
                     <!--          <li><a href="{{pathFor 'register'}}">Register</a>
 =======
@@ -105,9 +110,7 @@
 
 
 
-                    <li><a class="medium button hide-for-small button-radius secondary" data-reveal-id="registerModal ">Register your Club</a>
 
-                    </li>
                 </ul>
             </section>
         </nav>
@@ -125,14 +128,14 @@
     </div>
 
     <!-- Form REGISTRATION Modal -->
-      <div id="signModal" class="reveal-modal small">
-        <form class="custom"> 
-                <legend> SIGN IN</legend>
-                <label for="mail"> Email:</label>
-                <input type="email" id="mail" name="user_email">
+    <div id="signModal" class="reveal-modal small">
+        <form class="custom">
+            <legend> SIGN IN</legend>
+            <label for="mail"> Email:</label>
+            <input type="email" id="mail" name="user_email">
 
-                <label for="password"> Password:</label>
-                <input type="password" id="password" name="user_password">
+            <label for="password"> Password:</label>
+            <input type="password" id="password" name="user_password">
 
             <button type="submit"> Log In</button>
             <button type="submit"> Forgot Password?</button>
@@ -167,7 +170,7 @@
                 <label for="uni-name"> School ID:</label>
                 <input type="text" id="uni-name" name="uni_name">
             </fieldset>
-            <button type="submit" > Sign Up</button>
+            <button type="submit"> Sign Up</button>
         </form>
         <a href="#" class="close-reveal-modal">&#215;</a>
     </div>
