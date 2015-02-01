@@ -6,24 +6,43 @@
 </body>
 
 <template name="mainLayout">
+        <hr>
+
   <div class="row">
-    <div class="large-12 columns">
-      <div class="row">
-        <div class="large-12 columns">
-          {{> yield region="navbar"}}
-        </div>
-      </div>
 
       <hr>
+    <div class="large-12 columns">
+      <hr>
+
+
+
+      <div class="row">
+
+        <div class="large-12 columns">
+
+          {{> yield region="navbar"}}
+      <hr>
+
+        </div>
+      </div>
+
 
         <div class="row">
+                <hr>
+
           <div class="large-12 columns">
+
+
             {{> yield}}
+
           </div>
+
         </div>
 
       </div>
+
     </div>
+
 
     {{> yield region="footer"}}
 
@@ -35,6 +54,8 @@
 
     <!-- display events -->
     {{#each clubEvents}} {{> clubEvent}} {{/each}}
+          <hr>
+
 
   </div>
 </template>
@@ -167,6 +188,7 @@
 
 <template name="clubEvent">
   <div class="large-4 small-6 columns">
+
     <img src="/img/1.jpg">
     <div class="panel">
       <h5>{{name}}</h5>

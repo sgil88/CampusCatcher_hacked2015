@@ -85,6 +85,7 @@ if (Meteor.isClient) {
       }
   });
 
+
 /*
   // adding a new event
   Template.dashboard.events({
