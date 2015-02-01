@@ -11,8 +11,22 @@
 
             <div class="row">
                 <div class="large-12 columns">
-                    {{> yield region="navbar"}}
+                    <div class="contain-to-grid fixed">
+
+                        {{> yield region="navbar"}}
+                        <li class="has-form">
+                            <div class="row collapse">
+                                <div class="large-9 small-9 columns">
+                                    <input type="text" placeholder="Find Stuff">
+                                </div>
+                                <div class="large-3 small-3 columns">
+                                    <a href="#" class="alert button expand">Search</a>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
+
             </div>
 
             <hr>
@@ -55,8 +69,9 @@
 </template>
 
 <template name="dashboard">
+
     <div class="row">
-      loremsdosfkodspkfodspkfodpskfopskofdpskfodpskfodsfdsfdsfsdfds
+        loremsdosfkodspkfodspkfodpskfopskofdpskfodpskfodsfdsfdsfsdfds
         <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
     </div>
@@ -73,41 +88,28 @@
 <template name="navbarTemp">
 
     <!-- TOP BAR MENU -->
-    <div class="contain-to-grid fixed">
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <li class="name">
-                    <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
-                </li>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
+            </li>
 
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-                </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+            </li>
+        </ul>
+        <section class="top-bar-section">
+            <ul class="right">
+
+                <p class="button-group radius">
+                    <a href="#" class="button success" data-reveal-id="signModal">Sign In</a>
+                    <a class="button alert" data-reveal-id="registerForm ">Register</a>
+                </p>
             </ul>
+        </section>
+    </nav>
 
 
-            <section class="top-bar-section">
-                <ul class="right">
 
-                    <p class="button-group radius">
-                        <a href="#" class="button success" data-reveal-id="signModal">Sign In</a>
-                        <a class="button alert" data-reveal-id="registerForm ">Register</a>
-
-                    </p>
-                </ul>
-            </section>
-        </nav>
-
-        <li class="has-form">
-            <div class="row collapse">
-                <div class="large-9 small-9 columns">
-                    <input type="text" placeholder="Find Stuff">
-                </div>
-                <div class="large-3 small-3 columns">
-                    <a href="#" class="alert button expand">Search</a>
-                </div>
-            </div>
-        </li>
-    </div>
 
     <!-- Form REGISTRATION Modal -->
     <div id="signModal" class="reveal-modal small">
