@@ -56,13 +56,6 @@ body{
 }
 
 
-h3 {
-width: 100%;
-background-color: #FAC803;
-font-weight: bolder;
-padding: 7px;
-font-size: 19px;
-}
 
 .tags {
 font-size: 12px;
@@ -71,10 +64,32 @@ padding-top: 2em;
 color: #4E9BF4 !important;
 }
 
+.title {
+width: 100%;
+background-color: #333333;
+font-weight: 300;
+padding: 15px;
+font-size: 22px;
+border-bottom-right-radius: 0.5em;
+border-bottom-left-radius: 0.5em;
+color: #FFC06D;
+margin-bottom: 10px;
+}
+
+.normal {
+font-size: 21px;
+background: #3ACBF5;
+text-align: left;
+padding-left: 13px;
+font-size: 1em;
+border-radius: 5px;
+font-weight: 500;
+margin-bottom: 4px;
+}
 
 .time {
 font-size: 21px;
-background: #FF8800;
+background: #FFA500;
 text-align: left;
 padding-left: 13px;
 font-size: 1em;
