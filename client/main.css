@@ -130,6 +130,16 @@ font-weight: 500;
 margin-bottom: 1em;
 }
 
+ .right.school {
+line-height: 17px;
+color: #054260;
+margin-top: -5px;
+font-size: 15px;
+background: #4AAC43;
+padding: 7px;
+border-radius: 3px;
+}
+
 .info {
 font-size: 14px;
 padding: 0 7px;
