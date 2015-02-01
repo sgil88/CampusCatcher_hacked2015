@@ -56,11 +56,9 @@
 
 <template name="dashboard">
     <div class="row">
-
-
+      loremsdosfkodspkfodspkfodpskfopskofdpskfodpskfodsfdsfdsfsdfds
         <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
-
     </div>
 </template>
 
@@ -89,12 +87,12 @@
 
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><a class="medium button hide-for-small button-radius success" 
-                          data-reveal-id="signModal" >Sign In</a>
-                    </li>
-                    <li><a class="medium button hide-for-small button-radius secondary" 
-                          data-reveal-id="registerModal ">Register your Club</a>
-                    </li>
+
+                    <p class="button-group radius">
+                        <a href="#" class="button success" data-reveal-id="signModal">Sign In</a>
+                        <a class="button alert" data-reveal-id="registerForm ">Register</a>
+
+                    </p>
                 </ul>
             </section>
         </nav>
@@ -112,14 +110,14 @@
     </div>
 
     <!-- Form REGISTRATION Modal -->
-      <div id="signModal" class="reveal-modal small">
-        <form class="custom"> 
-                <legend> SIGN IN</legend>
-                <label for="mail"> Email:</label>
-                <input type="email" id="mail" name="user_email">
+    <div id="signModal" class="reveal-modal small">
+        <form class="login">
+            <legend> SIGN IN</legend>
+            <label for="login-email"> Email:</label>
+            <input type="email" id="login-email" name="login-email">
 
-                <label for="password"> Password:</label>
-                <input type="password" id="password" name="user_password">
+            <label for="login-password"> Password:</label>
+            <input type="password" id="login-password" name="login-password">
 
             <button type="submit"> Log In</button>
             <button type="submit"> Forgot Password?</button>
@@ -156,7 +154,7 @@
                 <input type="text" id="university" name="university">
 
             </fieldset>
-            <button type="submit" > Sign Up</button>
+            <button type="submit"> Sign Up</button>
         </form>
         <a href="#" class="close-reveal-modal">&#215;</a>
     </div>
