@@ -8,7 +8,6 @@
 <template name="mainLayout">
   <div class="row">
     <div class="large-12 columns">
-
       <div class="row">
         <div class="large-12 columns">
           {{> yield region="navbar"}}
@@ -42,6 +41,7 @@
 
 
 <template name="dashboard">
+  <hr/>
   <div class="row">
     <form class="add-event">
       <input type="text" name="eventName" placeholder="Event name" />
@@ -71,7 +71,6 @@
         <li class="name">
           <h1><a href="#">campus catch<span style="color:#ffcc00">r</span></a></h1>
         </li>
-
         <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a>
         </li>
       </ul>
