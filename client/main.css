@@ -11,22 +11,30 @@ background-color: #054260;
 list-style: none;
 padding-top: 2em;
 padding-left: 10em;
-height: 6em;
+padding-top: 18px !important;
+
+}
+.top-bar{
+background:#1A1A1A;
 }
 
+#club-gallery {
+padding-top: 13em;
+}
 
 .contain-to-grid .top-bar{
 	height:5em;
 }
 
-
-.top-bar-section ul li {
-background: #298aba;
+.contain-to-grid{
+    background-color: #1A1A1A;
 }
 
-.top-bar-section li:not(.has-form) a:not(.button){
-background: #298aba;	
+a.alert.button.small.bar{
+    height:38px;
 }
+
+
 
 .top-bar .name h1 a{
 font-size: 2em;
@@ -34,7 +42,10 @@ margin-top: 17px;
 }
 
 
-
+li.has-form{
+    padding:0;
+    padding-top: 2em;
+}
 
 button.alert, .button.alert {
 background-color: #3385A3;
@@ -55,7 +66,17 @@ body{
 	background:#E7E7E7;
 }
 
-
+div#search {
+background-color: #054260;
+margin-top: 5em;
+position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
+  height: auto;
+}
 
 .tags {
 font-size: 12px;
@@ -128,7 +149,6 @@ text-align: left;
 
 #footer{
     height: 50px;
-    position: fixed;
     bottom: 0px;
     left: 0px;
     line-height: 50px;
