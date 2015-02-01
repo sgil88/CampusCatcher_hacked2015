@@ -16,13 +16,14 @@ Router.map(function() {
   this.route('register', {layoutTemplate: 'mainLayout',
                           yieldTemplates: {
                             'navbarTemp': {to: 'navbar'},
-                            'footerTemp': {to: 'footer'}
+                            'footerTemp': {to: 'footer'},
+                            
                           }
   });
 });
 
 // db for events
-Events = new Mongo.Collection("events");
+ClubEvents = new Mongo.Collection("clubEvents");
 Clubs = new Mongo.Collection("clubs");
 
 if (Meteor.isClient) {
@@ -35,25 +36,31 @@ if (Meteor.isClient) {
                       timestamp.getDate());
 
   Template.home.helpers({
-      events: function () { return Events.find();
+      clubEvents: function () { return ClubEvents.find();
       }
   });
-/*
-  // register student club
-  Template.register.events({
-      var club =  event.target.club.value;
-      var email = event.target.email.value;
-      var university = event.target.university.value;
 
-      Clubs.insert({
-          club: club,
-          university: university,
-          email: email 
- 
-          return false;
-      });
+  Template.register.events({
+      'submit .new-club': function(event) {
+        // add club to database
+        var club =  event.target.clubName.value;
+        var email = event.target.email.value;
+        var university = event.target.university.value;
+        var description = event.target.clubDescription.value;
+
+        Clubs.insert({
+            club: club,
+            university: university,
+            email: email,
+            description: description
+        });
+          
+        Router.go('dashboard');
+        return false;
+      }
   });
 
+/*
   // adding a new event
   Template.dashboard.events({
       "submit .new-event": function (event) {
@@ -79,6 +86,7 @@ if (Meteor.isClient) {
     this.$('datepicker').datepicker();
   };
   */
+
 }
 
 if (Meteor.isServer) {

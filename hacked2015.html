@@ -35,7 +35,7 @@
   <div class="row">
 
     <!-- display events -->
-    {{#each events}} {{> event}} {{/each}}
+        {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
   </div>
 </template>
@@ -43,15 +43,17 @@
 <template name="register">
   <div class="row">
     <form class="new-club">
-      <input type="text" name="name" 
+      <input type="text" name="clubName" 
             placeholder="Club name" required="required"/>
       <input type="text" name="university"
             placeholder="University club is registered with"
             required="required"/>
       <input type="email" name="email" 
             placeholder="Club email" required="required"/>
-      <input type="text" name="description" 
+      <input type="text" name="clubDescription" 
             placeholder="Description of club"  equired="required"/>
+
+      <input type="submit"/>
     </form>
   </div>
 </template>
@@ -60,7 +62,7 @@
   <div class="row">
 
     <!-- display events -->
-    {{#each events}} {{> event}} {{/each}}
+      {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
   </div>
 </template>
@@ -91,8 +93,7 @@
         <ul class="right">
           <li><a href="">Sign in</a>
           </li>
-          <li><a href="{{pathFor 'register'}}">Register</a>
-          </li>
+          <li><a href="{{pathFor 'register'}}">Register</a></li>
         </ul>
       </section>
     </nav>
@@ -110,7 +111,8 @@
   </div>
 </template>
 
-<template name="event">
+
+<template name="clubEvent">
   <div class="large-4 small-6 columns">
     <img src="/img/1.jpg">
     <div class="panel">
@@ -119,3 +121,4 @@
     </div>
   </div>
 </template>
+
