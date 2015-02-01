@@ -34,7 +34,7 @@ if (Meteor.isClient) {
                       timestamp.getMonth(),
                       timestamp.getDate());
 
-  Template.body.helpers({
+  Template.home.helpers({
       events: function () { return Events.find();
       }
   });
