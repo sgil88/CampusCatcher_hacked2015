@@ -34,7 +34,7 @@
     <div class="row">
 
 
-    <!-- display events -->
+        <!-- display events -->
         {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
     </div>
@@ -42,29 +42,24 @@
 
 <template name="register">
 
-  <div class="row">
-    <form class="new-club">
-      <input type="text" name="clubName" 
-            placeholder="Club name" required="required"/>
-      <input type="text" name="university"
-            placeholder="University club is registered with"
-            required="required"/>
-      <input type="email" name="email" 
-            placeholder="Club email" required="required"/>
-      <input type="text" name="clubDescription" 
-            placeholder="Description of club"  equired="required"/>
+    <div class="row">
+        <form class="new-club">
+            <input type="text" name="clubName" placeholder="Club name" required="required" />
+            <input type="text" name="university" placeholder="University club is registered with" required="required" />
+            <input type="email" name="email" placeholder="Club email" required="required" />
+            <input type="text" name="clubDescription" placeholder="Description of club" equired="required" />
 
-      <input type="submit"/>
-    </form>
-  </div>
+            <input type="submit" />
+        </form>
+    </div>
 </template>
 
 <template name="dashboard">
     <div class="row">
 
 
-    <!-- display events -->
-      {{#each clubEvents}} {{> clubEvent}} {{/each}}
+        <!-- display events -->
+        {{#each clubEvents}} {{> clubEvent}} {{/each}}
 
     </div>
 </template>
@@ -94,7 +89,7 @@
 
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><a href="">Sign in</a>
+                    <li><a class="medium button hide-for-small" data-reveal-id="signModal">Sign In</a>
                     </li>
 
                     <!--          <li><a href="{{pathFor 'register'}}">Register</a>
@@ -106,11 +101,11 @@
          <li><a href="{{pathFor 'register'}}">Register</a>
 >>>>>>> 01e93ab72e0e37ca57d6f62db6e5a11e453fd8a7
           </li>
-        --> 
+        -->
 
-      
 
-                    <li><a class="medium button hide-for-small" data-reveal-id="formModal">Register your Club</a>
+
+                    <li><a class="medium button hide-for-small" data-reveal-id="registerModal">Register your Club</a>
 
                     </li>
                 </ul>
@@ -129,8 +124,28 @@
         </li>
     </div>
 
-    <!-- Form Modal -->
-    <div id="formModal" class="reveal-modal small">
+    <!-- Form REGISTRATION Modal -->
+      <div id="signModal" class="reveal-modal small">
+        <form class="custom"> 
+                <legend> SIGN IN</legend>
+
+                <label for="mail"> Email:</label>
+                <input type="email" id="mail" name="user_email">
+
+                <label for="password"> Password:</label>
+                <input type="password" id="password" name="user_password">
+
+            <button type="submit"> Log In</button>
+            <button type="submit"> Forgot Password?</button>
+
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
+    <!-- End Form REGISTRATION Modal -->
+
+
+    <!-- Form SIGN IN Modal -->
+    <div id="registerModal" class="reveal-modal small">
         <h3>SIGN UP</h3>
         <form class="custom">
             <fieldset>
@@ -149,31 +164,25 @@
                 <label for="bio"> Biography:</label>
                 <textarea id="bio" name="user_bio"></textarea>
             </fieldset>
-            
             <fieldset>
                 <label for="uni-name"> School ID:</label>
                 <input type="text" id="uni-name" name="uni_name">
-
             </fieldset>
-
-            <button type="submit"> Sign Up</button>
-
-
+            <button type="submit" > Sign Up</button>
         </form>
         <a href="#" class="close-reveal-modal">&#215;</a>
     </div>
-    <!-- End Form Modal -->
+    <!-- End Form SIGN IN Modal -->
 
 </template>
 
 
 <template name="clubEvent">
-  <div class="large-4 small-6 columns">
-    <img src="/img/1.jpg">
-    <div class="panel">
-      <h5>{{name}}</h5>
-      <h6>{{date}}</h6>
+    <div class="large-4 small-6 columns">
+        <img src="/img/1.jpg">
+        <div class="panel">
+            <h5>{{name}}</h5>
+            <h6>{{date}}</h6>
+        </div>
     </div>
-  </div>
 </template>
-
