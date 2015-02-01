@@ -13,18 +13,11 @@ padding-top: 2em;
 padding-left: 10em;
 }
 
-.contain-to-grid {
-background: #298aba;
-}
 
 .contain-to-grid .top-bar{
 	height:5em;
 }
 
-.top-bar {
-background: #298aba;
-overflow: visible;
-}
 
 .top-bar-section ul li {
 background: #298aba;
@@ -43,6 +36,12 @@ margin-top: 17px;
 	background: #4EB4E7;
 }
 
+
+button.alert, .button.alert {
+background-color: #3385A3;
+border-color: #0A558B;
+color: #fff;
+}
 
 
 
