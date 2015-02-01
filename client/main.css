@@ -7,13 +7,18 @@ margin-left: 8px;
 }
 
 li.has-form {
-background-color: #0b6490;
+background-color: #054260;
 list-style: none;
 padding-top: 2em;
+padding-left: 10em;
 }
 
 .contain-to-grid {
 background: #298aba;
+}
+
+.contain-to-grid .top-bar{
+	height:5em;
 }
 
 .top-bar {
@@ -29,3 +34,34 @@ background: #298aba;
 background: #298aba;	
 }
 
+.top-bar .name h1 a{
+font-size: 2em;
+margin-top: 17px;
+}
+
+.panel{
+	background: #4EB4E7;
+}
+
+
+
+
+
+
+/*******
+MAIN CSS
+*******/
+body{
+	background:#E7E7E7;
+}
+#footer{
+    height: 50px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    line-height: 50px;
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+    background:#054260;
+}
