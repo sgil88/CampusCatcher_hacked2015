@@ -15,20 +15,39 @@ padding-top: 18px !important;
 box-shadow: 1px 4px 13px rgba(0, 0, 0, 4.62);
 
 }
-.top-bar{
-background:#1A1A1A;
+
+#date-events {
+padding-top: 6em;
+padding-left: 5em;
+font-size: 30px;
+color: #838383;
 }
 
+.top-bar{
+background:#272727;
+}
+
+.event.button-group.radius>*{
+width: 132px;
+font-size: 17px;
+}
+
+
+a#info {
+background-color: #3385A3;
+}
+
+/**
 #club-gallery {
 padding-top: 13em;
-}
+}*/
 
 .contain-to-grid .top-bar{
 	height:5em;
 }
 
 .contain-to-grid{
-    background-color: #1A1A1A;
+    background-color: #272727;
 }
 
 a.alert.button.small.bar{
