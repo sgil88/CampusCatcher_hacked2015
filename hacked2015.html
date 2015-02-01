@@ -6,9 +6,10 @@
 </body>
 
 <template name="mainLayout">
-    <hr><hr> {{> yield region="navbar"}}
-    <hr><hr>
-    {{> yield}} {{> yield region="footer"}}
+    <hr>
+    <hr> {{> yield region="navbar"}}
+    <hr>
+    <hr> {{> yield}} {{> yield region="footer"}}
 
 </template>
 
@@ -140,17 +141,49 @@
         <a href="#" class="close-reveal-modal">&#215;</a>
     </div>
     <!-- End Form SIGN IN Modal -->
-
 </template>
 
 
 <template name="clubEvent">
-    <div class="large-4 small-6 columns">
 
+
+    <!--MAIN CONTENT-->
+    <section id="event-gallery" class="row small-10 medium-8 large-6">
+
+
+    <div class="small-12 medium-4 large-4 columns text-center"><div class="panel">
+       <img src="/img/1.jpg">
+            <h3>Main 1</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam, laudantium. Ullam optio placeat nostrum nam quibusdam, quo quisquam quae.saepe.
+  </div>
+</div>
+
+    <div class="small-12 medium-4 large-4 columns text-center"><div class="panel">
+       <img src="/img/1.jpg">
+            <h3>Main 1</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam, laudantium. Ullam optio placeat nostrum nam quibusdam, quo quisquam quae.saepe.
+  </div>
+</div>
+
+    <div class="small-12 medium-4 large-4 columns text-center"><div class="panel">
+       <img src="/img/1.jpg">
+            <h3>Main 1</h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam, laudantium. Ullam optio placeat nostrum nam quibusdam, quo quisquam quae.saepe.
+  </div>
+</div>
+
+
+    </section>
+
+
+
+    <!--  <div class="large-4 small-6 columns">
         <img src="/img/1.jpg">
         <div class="panel">
             <h5>{{name}}</h5>
             <h6>{{date}}</h6>
+            <h7 class = "strech"> #cupcake #chocolate #pharmacy</h7>
         </div>
     </div>
+  -->
 </template>
