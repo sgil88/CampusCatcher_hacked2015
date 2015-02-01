@@ -89,27 +89,9 @@
 
                     <p class="button-group radius">
                         <a href="#" class="button success" data-reveal-id="signModal">Sign In</a>
-                        <a href="#" class="button alert" data-reveal-id="registerModal">Register</a>
+                        <a class="button alert" data-reveal-id="registerForm ">Register</a>
 
                     </p>
-
-
-
-
-
-                    <!--          <li><a href="{{pathFor 'register'}}">Register</a>
-=======
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><a href="">Sign in</a>
-          </li>
-         <li><a href="{{pathFor 'register'}}">Register</a>
->>>>>>> 01e93ab72e0e37ca57d6f62db6e5a11e453fd8a7
-          </li>
-        -->
-
-
-
 
                 </ul>
             </section>
@@ -147,28 +129,30 @@
 
 
     <!-- Form SIGN IN Modal -->
-    <div id="registerModal" class="reveal-modal small">
+    <!-- Form Modal -->
+    <div id="registerForm" class="reveal-modal small">
         <h3>SIGN UP</h3>
-        <form class="custom">
+        <form class="new-club">
             <fieldset>
                 <!--Puts a margin to separate other field sets-->
                 <legend> Club Information</legend>
-                <label for="name"> Club Name:</label>
+                <label for="clubName"> Club Name:</label>
                 <!--focuses by id-->
-                <input type="text" id="name" name="user_name">
+                <input type="text" id="clubName" name="clubName">
 
-                <label for="mail"> Email:</label>
-                <input type="email" id="mail" name="user_email">
+                <label for="email"> Email:</label>
+                <input type="email" id="email" name="email">
 
                 <label for="password"> Password:</label>
-                <input type="password" id="password" name="user_password">
+                <input type="password" id="password" name="password">
 
-                <label for="bio"> Biography:</label>
-                <textarea id="bio" name="user_bio"></textarea>
+                <label for="des"> Description:</label>
+                <textarea id="des" name="description"></textarea>
             </fieldset>
             <fieldset>
-                <label for="uni-name"> School ID:</label>
-                <input type="text" id="uni-name" name="uni_name">
+                <label for="university"> School Name:</label>
+                <input type="text" id="university" name="university">
+
             </fieldset>
             <button type="submit"> Sign Up</button>
         </form>
