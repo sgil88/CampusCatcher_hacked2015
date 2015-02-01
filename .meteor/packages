@@ -9,3 +9,5 @@ autopublish
 insecure
 foundation
 iron:router
+accounts-ui
+accounts-password

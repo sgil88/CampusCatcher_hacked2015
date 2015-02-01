@@ -1,140 +1,159 @@
-
 <head>
-  <title>hacked2015</title>
+    <title>hacked2015</title>
 </head>
 
 <body>
 </body>
-  
+
 <template name="mainLayout">
-  <div class="row">
-    <div class="large-12 columns">
-    
-      <div class="row">
+    <div class="row">
         <div class="large-12 columns">
-          {{> yield region="navbar"}}
-        </div>
-      </div>
 
-      <hr>
-      
-      <div class="row">
-        <div class="large-12 columns">
-          {{> yield}}
-        </div>
-      </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    {{> yield region="navbar"}}
+                </div>
+            </div>
 
+            <hr>
+
+            <div class="row">
+                <div class="large-12 columns">
+                    {{> yield}}
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 
-  {{> yield region="footer"}}
+    {{> yield region="footer"}}
 
 </template>
 
 <template name="home">
-  <div class="row">
+    <div class="row">
 
-    <!-- display events -->
-    {{#each events}} {{> event}} {{/each}}
+        <!-- display events -->
+        {{#each events}} {{> event}} {{/each}}
 
-  </div>
+    </div>
 </template>
 
 <template name="register">
-  <div class="row">
-    <form class="new-club">
-      <input type="text" name="name" 
-            placeholder="Club name" required="required"/>
-      <input type="text" name="university"
-            placeholder="University club is registered with"
-            required="required"/>
-      <input type="email" name="email" 
-            placeholder="Club email" required="required"/>
-      <input type="text" name="description" 
-            placeholder="Description of club"  equired="required"/>
-    </form>
-  </div>
+    <div class="row">
+        <form class="new-club">
+            <input type="text" name="name" placeholder="Club name" required="required" />
+            <input type="text" name="university" placeholder="University club is registered with" required="required" />
+            <input type="email" name="email" placeholder="Club email" required="required" />
+            <input type="text" name="description" placeholder="Description of club" equired="required" />
+        </form>
+    </div>
 </template>
 
 <template name="dashboard">
-  <div class="row">
+    <div class="row">
 
-    <!-- display events -->
-    {{#each events}} {{> event}} {{/each}}
+        <!-- display events -->
+        {{#each events}} {{> event}} {{/each}}
 
-  </div>
+    </div>
 </template>
 
 <template name="footerTemp">
-  <!-- Page Footer -->
-  <div id="footer">
-    &copy; 2015 Campus Catcher
-  </div>
-  <!-- End Page Footer -->
+    <!-- Page Footer -->
+    <div id="footer">
+        &copy; 2015 Campus Catcher
+    </div>
+    <!-- End Page Footer -->
 </template>
 
 <template name="navbarTemp">
 
-  <!-- TOP BAR MENU -->
-  <div class="contain-to-grid fixed">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
-        </li>
+    <!-- TOP BAR MENU -->
+    <div class="contain-to-grid fixed">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">Campus Catch<span style="color:#ffcc00">R</span></a></h1>
+                </li>
 
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-        </li>
-      </ul>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
 
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><a href="">Sign in</a>
-          </li>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li><a href="">Sign in</a>
+                    </li>
 
-<!--          <li><a href="{{pathFor 'register'}}">Register</a>
+                    <!--          <li><a href="{{pathFor 'register'}}">Register</a>
           </li>
         -->
 
-          <li><a class="medium button hide-for-small" data-reveal-id="formModal">Register your Club</a>
+                    <li><a class="medium button hide-for-small" data-reveal-id="formModal">Register your Club</a>
 
-          </li>
-        </ul>
-      </section>
-    </nav>
+                    </li>
+                </ul>
+            </section>
+        </nav>
 
-    <li class="has-form">
-      <div class="row collapse">
-        <div class="large-9 small-9 columns">
-          <input type="text" placeholder="Find Stuff">
-        </div>
-        <div class="large-3 small-3 columns">
-          <a href="#" class="alert button expand">Search</a>
-        </div>
-      </div>
-    </li>
-  </div>
+        <li class="has-form">
+            <div class="row collapse">
+                <div class="large-9 small-9 columns">
+                    <input type="text" placeholder="Find Stuff">
+                </div>
+                <div class="large-3 small-3 columns">
+                    <a href="#" class="alert button expand">Search</a>
+                </div>
+            </div>
+        </li>
+    </div>
 
     <!-- Form Modal -->
     <div id="formModal" class="reveal-modal small">
-      <h3>Club Registration</h3>
-      <form class="custom">
-        <fieldset>
-          <input type="tel" placeholder="Mobile Phone">           
-          <button type="submit" class="small button">Sign Up!</button>
-        </fieldset>
-      </form>
-      <a href="#" class="close-reveal-modal">&#215;</a>
-    </div><!-- End Form Modal -->
+        <h3>SIGN UP</h3>
+        <form class="custom">
+            <fieldset>
+                <!--Puts a margin to separate other field sets-->
+                <legend> Club Information</legend>
+                <label for="name"> Club Name:</label>
+                <!--focuses by id-->
+                <input type="text" id="name" name="user_name">
+
+                <label for="mail"> Email:</label>
+                <input type="email" id="mail" name="user_email">
+
+                <label for="password"> Password:</label>
+                <input type="password" id="password" name="user_password">
+
+                <label for="bio"> Biography:</label>
+                <textarea id="bio" name="user_bio"></textarea>
+
+            </fieldset>
+
+
+            <fieldset>
+                <label for="uni-name"> School ID:</label>
+                <input type="text" id="uni-name" name="uni_name">
+
+            </fieldset>
+
+            <button type="submit"> Sign Up</button>
+
+
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
+    <!-- End Form Modal -->
 
 </template>
 
 <template name="event">
-  <div class="large-4 small-6 columns">
-    <img src="/img/1.jpg">
-    <div class="panel">
-      <h5>{{name}}</h5>
-      <h6>{{date}}</h6>
+    <div class="large-4 small-6 columns">
+        <img src="/img/1.jpg">
+        <div class="panel">
+            <h5>{{name}}</h5>
+            <h6>{{date}}</h6>
+        </div>
     </div>
-  </div>
 </template>
