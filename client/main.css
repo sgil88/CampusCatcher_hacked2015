@@ -11,6 +11,7 @@ background-color: #054260;
 list-style: none;
 padding-top: 2em;
 padding-left: 10em;
+height: 6em;
 }
 
 
@@ -43,7 +44,9 @@ border-color: #0A558B;
 color: #fff;
 }
 
-
+.large-12 {
+padding-bottom: 2em;
+}
 
 
 

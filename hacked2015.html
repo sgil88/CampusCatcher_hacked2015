@@ -1,46 +1,21 @@
 <head>
-  <title>hacked2015</title>
+    <title>hacked2015</title>
 </head>
 
 <body>
 </body>
 
 <template name="mainLayout">
+    <div class="row">
         <hr>
-
-  <div class="row">
-
-      <hr>
-    <div class="large-12 columns">
-      <hr>
-
-
-
-      <div class="row">
-
         <div class="large-12 columns">
-
-          {{> yield region="navbar"}}
-      <hr>
-
-        </div>
-      </div>
-
-
-        <div class="row">
+            <div class="row">
+                    {{> yield region="navbar"}}
+                    <hr>
+            </div>
                 <hr>
-
-          <div class="large-12 columns">
-
-
-            {{> yield}}
-
-          </div>
-
+                    {{> yield}}
         </div>
-
-      </div>
-
     </div>
 
 
@@ -49,150 +24,149 @@
 </template>
 
 <template name="home">
-  <div class="row">
+    <div class="row">
 
 
-    <!-- display events -->
-    {{#each clubEvents}} {{> clubEvent}} {{/each}}
-          <hr>
+        <!-- display events -->
+        {{#each clubEvents}} {{> clubEvent}} {{/each}}
+        <hr>
 
 
-  </div>
+    </div>
 </template>
 
 
 <template name="dashboard">
-  <hr/>
-  <div class="row">
-    <form class="add-event">
-      <input type="text" name="eventName" placeholder="Event name" />
-      <input type="text" name="date" placeholder="Date..." />
-      <input type="text" name="eventDescription" 
-          placeholder="Event description" required="required" />
+    <hr/>
+    <div class="row">
+        <form class="add-event">
+            <input type="text" name="eventName" placeholder="Event name" />
+            <input type="text" name="date" placeholder="Date..." />
+            <input type="text" name="eventDescription" placeholder="Event description" required="required" />
 
-      <input type="submit" value="Add Event"/>
+            <input type="submit" value="Add Event" />
 
-    </form>
-  </div>
+        </form>
+    </div>
 </template>
 
 <template name="footerTemp">
-  <!-- Page Footer -->
-  <div id="footer">
-    &copy; 2015 Campus Catcher
-  </div>
+    <!-- Page Footer -->
+    <div id="footer">
+        &copy; 2015 Campus Catcher
+    </div>
     <!-- End Page Footer -->
 </template>
 
 <template name="navbarTemp">
-  <!-- top bar menu -->
-  <div class="contain-to-grid fixed">
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">campus catch<span style="color:#ffcc00">r</span></a></h1>
+    <!-- top bar menu -->
+    <div class="contain-to-grid fixed">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">campus catch<span style="color:#ffcc00">r</span></a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a>
+                </li>
+            </ul>
+
+
+            <section class="top-bar-section">
+                <ul class="right">
+
+                    <p class="button-group radius">
+                        {{#if currentuser}}
+
+                        <a class="button alert" data-reveal-id="logoutform">logout</a> {{else}}
+                        <a href="#" class="button success" data-reveal-id="signmodal">sign in</a>
+                        <a class="button alert" data-reveal-id="registerform ">register</a> {{/if}}
+                    </p>
+                </ul>
+            </section>
+        </nav>
+<!--
+        <li class="has-form">
+                <div class="large-6 small-6 columns">
+                    <input type="text" placeholder="hackathon apps">
+                </div>
+                <div class="large-6 small-6 columns">
+                    <p class="button-group radius">
+                        <a href="#" class="alert button small">Go!</a>
+                        <a href="#" class="alert button small">advanced</a>
+                    </p>
+
+                </div>
         </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a>
-        </li>
-      </ul>
+      -->
+    </div>
 
+    <div id="logoutform" class="reveal-modal small">
+        <form class="logout">
+            <legend> log out</legend>
+            <button type="submit"> log out</button>
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
 
-      <section class="top-bar-section">
-        <ul class="right">
+    <!-- form registration modal -->
+    <div id="signmodal" class="reveal-modal small">
+        <form class="login">
+            <legend> sign in</legend>
+            <label for="login-email"> email:</label>
+            <input type="email" id="login-email" name="login-email">
 
-          <p class="button-group radius">
-            {{#if currentuser}}
+            <label for="login-password"> password:</label>
+            <input type="password" id="login-password" name="login-password">
 
-            <a class="button alert"
-                data-reveal-id="logoutform">logout</a>
-            {{else}}
-            <a href="#" class="button success" data-reveal-id="signmodal">sign in</a>
-            <a class="button alert" data-reveal-id="registerform ">register</a>
-            {{/if}}
-          </p>
-        </ul>
-      </section>
-    </nav>
+            <button type="submit"> log in</button>
+            <button type="submit"> forgot password?</button>
 
-    <li class="has-form">
-      <div class="row collapse">
-        <div class="large-9 small-9 columns">
-          <input type="text" placeholder="find stuff">
-        </div>
-        <div class="large-3 small-3 columns">
-          <a href="#" class="alert button expand">search</a>
-        </div>
-      </div>
-    </li>
-  </div>
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
 
-  <div id="logoutform" class="reveal-modal small">
-    <form class="logout">
-      <legend> log out</legend>
-      <button type="submit"> log out</button>
-    </form>
-    <a href="#" class="close-reveal-modal">&#215;</a>
-  </div>
+    <!-- form registration modal -->
+    <!-- form modal -->
+    <div id="registerform" class="reveal-modal small">
+        <h3>sign up</h3>
+        <form class="new-club">
+            <fieldset>
+                <!--puts a margin to separate other field sets-->
+                <legend> club information</legend>
+                <label for="clubname"> club name:</label>
+                <!--focuses by id-->
+                <input type="text" id="clubname" name="clubname">
 
-  <!-- form registration modal -->
-  <div id="signmodal" class="reveal-modal small">
-    <form class="login">
-      <legend> sign in</legend>
-      <label for="login-email"> email:</label>
-      <input type="email" id="login-email" name="login-email">
+                <label for="email"> email:</label>
+                <input type="email" id="email" name="email">
 
-      <label for="login-password"> password:</label>
-      <input type="password" id="login-password" name="login-password">
+                <label for="password"> password:</label>
+                <input type="password" id="password" name="password">
 
-      <button type="submit"> log in</button>
-      <button type="submit"> forgot password?</button>
+                <label for="des"> description:</label>
+                <textarea id="des" name="description"></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="university"> school name:</label>
+                <input type="text" id="university" name="university">
 
-    </form>
-    <a href="#" class="close-reveal-modal">&#215;</a>
-  </div>
-
-  <!-- form registration modal -->
-<!-- form modal -->
-  <div id="registerform" class="reveal-modal small">
-    <h3>sign up</h3>
-    <form class="new-club">
-      <fieldset>
-        <!--puts a margin to separate other field sets-->
-        <legend> club information</legend>
-        <label for="clubname"> club name:</label>
-        <!--focuses by id-->
-        <input type="text" id="clubname" name="clubname">
-
-        <label for="email"> email:</label>
-        <input type="email" id="email" name="email">
-
-        <label for="password"> password:</label>
-        <input type="password" id="password" name="password">
-
-        <label for="des"> description:</label>
-        <textarea id="des" name="description"></textarea>
-      </fieldset>
-      <fieldset>
-        <label for="university"> school name:</label>
-        <input type="text" id="university" name="university">
-
-      </fieldset>
-      <button type="submit"> sign up</button>
-    </form>
-    <a href="#" class="close-reveal-modal">&#215;</a>
-  </div>
-  <!-- End Form SIGN IN Modal -->
+            </fieldset>
+            <button type="submit"> sign up</button>
+        </form>
+        <a href="#" class="close-reveal-modal">&#215;</a>
+    </div>
+    <!-- End Form SIGN IN Modal -->
 
 </template>
 
 
 <template name="clubEvent">
-  <div class="large-4 small-6 columns">
+    <div class="large-4 small-6 columns">
 
-    <img src="/img/1.jpg">
-    <div class="panel">
-      <h5>{{name}}</h5>
-      <h6>{{date}}</h6>
+        <img src="/img/1.jpg">
+        <div class="panel">
+            <h5>{{name}}</h5>
+            <h6>{{date}}</h6>
+        </div>
     </div>
-  </div>
 </template>
