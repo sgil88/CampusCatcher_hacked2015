@@ -33,9 +33,7 @@ font-size: 2em;
 margin-top: 17px;
 }
 
-img {
-padding: 1.5em 1.5em 0.5em;
-}
+
 
 
 button.alert, .button.alert {
@@ -63,12 +61,36 @@ width: 100%;
 background-color: #FAC803;
 font-weight: bolder;
 padding: 7px;
+font-size: 19px;
+}
+
+.tags {
+font-size: 12px;
+font-style: italic;
+padding-top: 2em;
+color: #4E9BF4 !important;
 }
 
 
+.time {
+font-size: 21px;
+background: #F97B20;
+text-align: left;
+padding-left: 13px;
+font-size: 1em;
+border-radius: 5px;
+font-weight: 500;
+}
+
+.info {
+font-size: 14px;
+padding: 0 7px;
+text-align: left;
+}
+
 .panel{
     background: #fff;
-    padding:0;
+    padding: 1em;    
     border-radius: 1em;
 }
 
