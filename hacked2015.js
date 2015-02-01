@@ -45,7 +45,7 @@ if (Meteor.isClient) {
         event.preventDefault();
 
         // add club to database
-        var club =  template.find("#clubName.value").value;
+        var club =  template.find("#clubName").value;
         var email = template.find("#email").value;
         var university = template.find("#university").value;
         var description = template.find("#clubDescription").value;
@@ -67,23 +67,20 @@ if (Meteor.isClient) {
   Template.navbarTemp.events({
       'submit .login': function(event, template) {
         event.preventDefault();
+        var email = template.find('#login-email').value;
+        var pass = template.find('#login-password').value;
 
-        // add club to database
-        var club =  template.find("#clubName.value").value;
-        var email = template.find("#email").value;
-        var university = template.find("#university").value;
-        var description = template.find("#clubDescription").value;
-        var password = template.find("#password").value;
-
-        Accounts.createUser({
-            club: club,
-            university: university,
-            description: description,
-            email: email,
-            password: password,
-        });
-          
-        Router.go('dashboard');
+        Meteor.loginWithPassword(email, pass);
+        Router.go('home');
+        return false;
+      }
+  });
+  
+  Template.navbarTemp.events({
+      'submit .logout': function(event, template) {
+        event.preventDefault();
+        Meteor.logout();
+        Router.go('home');
         return false;
       }
   });
@@ -109,11 +106,7 @@ if (Meteor.isClient) {
         return false;
       }
   });
-
-  Template.datepicker.rendered=function() {
-    this.$('datepicker').datepicker();
-  };
-  */
+*/
 
 }
 
